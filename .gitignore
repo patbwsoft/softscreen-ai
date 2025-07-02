@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+
+# Python junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# Test + debug output
+outputs/
+brain_output/
+softscreen_brain/
+testers/
+tests/
+*.jpg
+*.png
+*.mp4

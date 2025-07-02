@@ -1,0 +1,20 @@
+blur_labels:
+- dog
+- person
+- cat
+- horse
+- bottle
+blur_strength_multiplier: 5.0
+confidence_boost: 0.15
+confidence_decay: 0.005
+confidence_threshold: 0.25
+detection_interval: 3
+label_weights:
+  cat: 0.6
+  dog: 1.0
+  person: 0.3
+max_hold_frames: 60
+max_missing_frames: 5
+min_object_area: 2500
+reattach_distance_thresh: 40
+top_k_blur: 10
