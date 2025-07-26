@@ -1,0 +1,50 @@
+## Blog #2: Running Real-Time AI Blur on Jetson Orin Nano
+
+When I first got the Jetson Orin Nano in the mail, I didn’t know exactly what I was doing — but I knew what I was building. SoftScreen needed to move out of the laptop and into the living room. Real people, real TVs, real problems. No cloud.
+
+The goal was simple: run a detection and blur system *locally* on edge hardware, without crashing, lagging, or overheating. It wasn’t just about blurring a dog. It was about proving that edge AI can be both powerful and personal.
+
+---
+
+### What I’ve got running:
+
+- **Jetson Orin Nano 8GB** (model T201 from Aileen’s team)
+- Full **real-time object detection**, segmentation, and **Gaussian blur**
+- Blur engine (Mello) that can *remember* what it saw and *persist blur* frame to frame
+- Completely **offline** — no internet, no cloud processing
+- Blur targets: dogs, nudity, alcohol, weapons (fully customizable)
+- Built-in reflection system that logs object tracking and confidence levels
+
+---
+
+### Why this matters:
+
+So many “AI” products today rely on the cloud. They track you. They throttle you. And when your WiFi goes down, so does the magic.
+
+This doesn’t.
+
+SoftScreen runs quietly next to your TV, doing its job without asking for anything. For dog owners. For trauma-aware viewers. For parents. For anybody who wants a little more control over what enters their home — without censorship.
+
+And it’s only going to get better.
+
+---
+
+### Up next:
+
+- Working on **audio filtering** so Mello can respond to sounds too
+- HDMI passthrough testing
+- Exploring form factor miniaturization
+- Eventually training our own model to replace YOLOv8
+
+---
+
+If you're into edge AI, content moderation, or accessibility — I’d love to hear from you. This project is real and it's running.
+
+> Email: softscreenai@gmail.com  
+> GitHub: [github.com/blur-lord/softscreen](https://github.com/blur-lord/softscreen)
+
+---
+
+Stay tuned. The Big Blur is coming.
+
+—Patrick
