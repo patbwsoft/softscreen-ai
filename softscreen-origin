@@ -1,0 +1,27 @@
+# How I Built a Real-Time Blur Filter for TVs Using Jetson Nano
+
+My name is Patrick, and I’m building something called SoftScreen — an AI-powered blur filter that runs in real time on edge hardware like the Jetson Orin Nano. The idea started from a very personal place: our dog Buffy reacts to animals on TV, and it was causing stress at home. I wanted a better way to manage what appears on the screen — so I started building one.
+
+I had no formal AI background when I began this journey. What I did have was curiosity, faith, and a deep need to create something that matters.
+
+### The Problem
+
+There are millions of families who deal with reactive dogs, kids with sensory needs, or simply want more control over what content appears on their screens. There’s no product right now that blurs *specific objects* like dogs, alcohol bottles, or weapons — **in real time** — as the video plays.
+
+That’s what SoftScreen does.
+
+### The Stack
+
+- **Model:** YOLOv8 for object detection (switching to something more stable soon)
+- **Device:** Jetson Orin Nano custom AI box (HDMI passthrough enabled)
+- **Pipeline:** FFmpeg + NVIDIA acceleration + custom masking logic
+- **Blur Engine:** “Mello,” our AI logic controller, filters targets intelligently
+- **Output:** Recompiled video with optional audio filtering (in development)
+
+### Why This Matters
+
+What started as a niche solution for dogs has become a much bigger vision: a content-aware, real-time video filter that adapts to *you*. Whether it’s removing alcohol for someone recovering, nudity for families, or triggering animals for dogs — SoftScreen aims to serve *people first*.
+
+---
+
+*Next post coming soon: how I wired it up on the Jetson and got live HDMI inference working.*
