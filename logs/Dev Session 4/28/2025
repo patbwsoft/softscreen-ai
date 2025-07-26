@@ -1,0 +1,36 @@
+#  SoftScreen/Mello Dev Session Notes - 4/28/2025
+
+✅ Finalized and sent out 10+ real-world outreach emails (kennels, autism centers).
+✅ Recognized friends/family feedback delay is normal — pivoted to real users smartly.
+✅ Built momentum by pivoting straight into Mello upgrades (no sitting in nervousness).
+
+✅ Mello v1.5 ➔ Confidence Boost and Blur Strength Mod
+- Stronger confidence building when objects are seen
+- Slower decay when objects are missed
+- Blur now fades dynamically based on confidence level
+
+✅ Mello v1.6 ➔ Smooth Visuals and Memory HUD
+- Fixed Matplotlib stealing focus from OpenCV video
+- Added live memory counter HUD on videos (" Memories: 5")
+
+✅ Mello v1.7 ➔ Time Machine Mode
+- Brain saves now create unique, timestamped CSVs and graphs for every run
+- Enabled brain evolution tracking across sessions
+
+✅ Mello v1.8 ➔ Config Wizard Upgrade
+- Created first `settings.yaml` spellbook
+- Mello now loads all key parameters from `settings.yaml` at startup
+- No code editing needed for tuning anymore — just change the YAML
+- Configurable params: detection confidence, blur strength, frame size, memory decay rates, more
+
+✅ First successful test run with YAML settings
+- Mello reached 40 active memories (highest yet)
+- Confidence stayed steady across majority of frames
+- Full brain snapshots saved cleanly and archived
+- Powershell + HUD clean, smooth, and powerful feeling
+
+✅ Session Mindset
+- Handled technical setbacks with no frustration
+- Pivoted smoothly between outreach, coding, testing
+- Built long-term systems instead of just chasing short-term wins
+- Made the session about growth and real-world scaling
