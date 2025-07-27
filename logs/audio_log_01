@@ -1,0 +1,78 @@
+# SoftScreen Audio Filtering — Log #01: Hearing for the First Time
+
+**Date:** July 27, 2025  
+**Author:** Patrick Wilcox  
+**Milestone:** First successful audio parsing + volume analysis in SoftScreen
+
+---
+
+###  What We Did
+
+Today marks the very first step toward teaching SoftScreen how to **hear**.
+
+We built a simple Python script that:
+- Loads an audio file (`.wav`)
+- Measures how loud it is
+- Breaks it into small chunks (like frames in video)
+- Prints the loudness of each chunk over time
+
+This is the beginning of our **audio blur pipeline** — a system that will detect and soften intense sounds like:
+- Dog barks
+- Doorbells
+- Screaming
+- Gunshots
+- Profanity
+- Storms or thunder
+- Baby cry
+---
+
+###  Tools Used
+
+- [`pydub`](https://github.com/jiaaro/pydub): For slicing and analyzing audio
+- `ffmpeg`: To decode audio formats like `.wav`, `.aac`, `.mp3`
+- Python 3.10 (running locally, not on Jetson yet)
+
+---
+
+###  The Code (v1)
+
+```python
+from pydub import AudioSegment
+from pydub.utils import make_chunks
+
+# Load audio file
+audio = AudioSegment.from_file("bark_example.wav")
+
+# Split into 200ms chunks
+CHUNK_LENGTH_MS = 200
+chunks = make_chunks(audio, CHUNK_LENGTH_MS)
+
+# Print loudness of each chunk
+for i, chunk in enumerate(chunks):
+    timestamp = i * (CHUNK_LENGTH_MS / 1000)
+    volume = chunk.dBFS
+    print(f"[{timestamp:.2f}s] Volume: {volume:.2f} dBFS")
+```
+
+---
+
+###  Why This Matters
+
+In video, SoftScreen detects **where** something intense is (like a dog), and blurs it.
+
+In audio, we now detect **when** something intense happens — like a bark spike — and can mute or dampen that exact moment.
+
+This opens the door to real-time **audio filtering**, which we’ll later sync with the video blur system to make SoftScreen fully multi-modal.
+
+---
+
+###  What’s Next?
+
+- Visualize the waveform + spike markers
+- Automatically flag loud chunks
+- Start experimenting with spectral fingerprints (dog barks vs. thunder)
+- Eventually add the ability to **mute, muffle, or replace** these sounds on export
+- Port this pipeline to the Jetson T201 edge box for live HDMI processing
+- Automatically add closed captioning for muted trigger sounds
+
+> — Blur Lord, July 2025
