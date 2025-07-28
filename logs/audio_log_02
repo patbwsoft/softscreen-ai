@@ -1,0 +1,52 @@
+# SoftScreen Audio Filtering — Log #02: Real-Time Audio-Visual Sync
+
+**Date:** July 27, 2025  
+**Milestone:** First successful real-time audio-triggered video blur
+
+---
+
+### 🎯 What We Did
+
+- Integrated `spikes.json` (detected loud audio moments) into `memory.py`
+- Converted spike timestamps into frame numbers using FPS
+- On any matching frame, Mello now **blurs the entire screen**, even if no object is visible
+- Verified the system live on `dog_playing2.mp4`, which includes multiple barks in the first few seconds
+- Blurs triggered **in sync with audio** even when YOLO didn’t detect the dog
+
+---
+
+### ✅ Debug Features Added
+
+- On audio-triggered frames, Mello overlays `"🔊 AUDIO BLUR"` text in red
+- Helps visually confirm that audio triggers are functioning
+
+---
+
+### 🔧 Code Highlights
+
+```python
+# Check if current frame matches any spike
+audio_trigger = self.frame_counter in self.spike_frames
+
+# Apply full-frame blur if so
+if audio_trigger:
+    mask[:, :] = 255
+    cv2.putText(frame, "🔊 AUDIO BLUR", (10, 40),
+                cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 2)
+```
+
+---
+
+### Why This Matters
+
+This officially makes SoftScreen **multi-modal**.
+
+Mello doesn’t just see — she hears.  
+Even if a dog is off-screen, or YOLO misses a bark visually, the screen still blurs.
+
+This is the foundation for:
+- Blurring yelling, thunder, or gunshots
+- Syncing sensory systems (audio + vision)
+- Real-world reactive video safety tools
+
+> — Blur Lord, July 2025
