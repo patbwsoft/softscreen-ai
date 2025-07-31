@@ -1,0 +1,40 @@
+# SoftScreen Audio Filtering — Log #03: Temporal Audio Blur Activated
+
+**Date:** July 30, 2025  
+**Milestone:** Audio-triggered blur now lasts 1.5 seconds per spike
+
+---
+
+### What We Did
+
+- Updated `TemporalMemory` to extend blur *beyond* the exact audio spike frame
+- Audio-triggered blur now persists for **1.5 seconds** after each detected spike
+- Added `"🔊 AUDIO BLUR"` overlay on spike-driven frames for visual confirmation
+- Ran full test with overlapping bark spikes — confirmed blur chaining works
+
+---
+
+### Code Highlight
+
+```python
+linger_frames = int(1.5 * fps)  # blur for 1.5 seconds after each spike
+for frame in frame_spikes:
+    for offset in range(linger_frames):
+        self.spike_frames.add(frame + offset)
+```
+
+---
+
+### Why This Matters
+
+Mello can now **hold the blur** through real-world sensory intensity — just like a human brain does.
+
+This sets the stage for:
+- Emotional or panic-triggered filters
+- Gradual blur fade-outs
+- Longform sensory prediction windows
+
+---
+
+
+> — Blur Lord, July 2025
