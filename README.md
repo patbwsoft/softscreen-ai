@@ -77,5 +77,5 @@ Special thanks to Daniel Situnayake for his early encouragement and guidance.
 
 ---
 
-The goal is simple: blur what you don’t want to see.  
+The goal is simple: blur what you don’t want to see, and now - what you dont want to hear.  
 No cloud. No compromise. Just control.
