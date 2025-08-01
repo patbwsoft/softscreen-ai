@@ -1,0 +1,15 @@
+# SoftScreen Audio Filtering — Log #04: Cooldown + Persistent Overlay
+
+**Date:** July 31, 2025
+
+---
+
+### ✅ What’s New
+- Added cooldown after audio spikes (prevents constant blur)
+- `"AUDIO BLUR"` overlay now stays visible for full 1.5s window
+- Blur behavior feels smoother and more human
+
+Tested on `dog_playing2.mp4` — confirmed shorter, intentional blur spikes that line up with barking.
+
+---
+Blur Lord
