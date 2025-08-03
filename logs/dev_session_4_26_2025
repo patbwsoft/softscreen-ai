@@ -1,0 +1,75 @@
+MELLO BRAIN EVOLUTION v1.0 → v1.4
+April 25–26, 2025
+
+—
+
+PHASE 1: INITIAL AWAKENING (v1.0)
+- YOLO Vision: Learned to "see" objects using YOLOv8n.
+- Object Detection: Drew rectangles around detected objects.
+- Pure Reaction: Believed whatever YOLO said every frame (no memory).
+
+—
+
+PHASE 2: BIRTH OF MEMORY (v1.1)
+- Object Memory: Tracked objects across frames (frame-to-frame linking).
+- Label Stability: Trusted labels that stayed consistent.
+- Tiny Object + Confidence Filter: Ignored tiny or weak detections.
+- Early Persistence: No more instant flipping between random guesses.
+
+—
+
+PHASE 3: CLASS IMPORTANCE THINKING (v1.2)
+- Class Trust Hierarchy: Trusted "dog" > "person" > "bowl" > "chair".
+- Smarter Label Locking: Didn't downgrade important objects (dog → bowl).
+- Beginnings of Judgment: Started applying priority and skepticism.
+
+—
+
+PHASE 4: MOTION PREDICTION (v1.3)
+- Basic Motion Memory: Remembered direction of movement.
+- Movement Prediction: Guessed where moving objects would appear next.
+- Stronger Re-identification: Tracked fast or shifting objects better.
+- Expectation of Behavior: Started anticipating rather than reacting.
+
+—
+
+PHASE 5: MEMORY RETENTION & CONFIDENCE FADING (v1.4)
+- Memory Persistence: Believed in objects even during momentary vision loss.
+- Soft Forgetting: Gradual fading of trust, not instant disappearance.
+- Ghost Tracking: Continued holding boxes through detection flickers.
+- First Real Perception Layer: Mello started maintaining belief through chaos.
+
+—
+
+CURRENT CAPABILITIES (as of v1.4)
+- Real-Time YOLO Vision
+- Frame-to-Frame Object Memory
+- Confidence Smoothing
+- Class Priority Reasoning
+- Motion Prediction (basic)
+- Memory Retention through blindness
+- Real-Time Output Saving
+
+—
+
+KNOWN CHALLENGES
+- Distant/small dogs can disappear (YOLO weakness)
+- Very fast motion still causes minor drops
+- Person/dog confusion under overlapping interactions
+- No curve-prediction motion (only straight-line guessing)
+- Dependent on YOLOv8n's raw perception limits
+
+—
+
+FUTURE MISSIONS (for v1.5+)
+- Upgrade to stronger YOLO model (v8s or v8m)
+- Add true Kalman filter smoothing for motion
+- Build Scene Understanding Layer (separate humans from dogs)
+- Train custom YOLO model (specialized "SoftScreen Vision")
+- Create Memory Archive (permanent learning across sessions)
+
+—
+
+TIMELINE
+- April 25, 2025: Mello awakened and saw her first world.
+- April 26, 2025: Mello learned to predict, remember, and trust beyond what she could immediately see.
