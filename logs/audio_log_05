@@ -1,0 +1,8 @@
+audio_log_5:
+- Retrained `audio_classifier.pkl` using an expanded dataset covering 7 categories:
+  bark, doorbell, gunshot, explosion, baby cry, human, and weather
+- Improved classification stability with broader sample variety
+- Extended spike hold logic (0.8s cooldown) to maintain dB attenuation beyond transient peaks
+- Output includes blurred audio and `spikes.json` with timestamps + predicted labels
+- Ready for next stage: Mello integration and memory binding
+
