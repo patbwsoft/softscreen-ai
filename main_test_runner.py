@@ -1,16 +1,13 @@
-from mello_brain.memory import TemporalMemory
-from mello_brain.introspect import run_pre_session_adjustments
+from mello_core.memory import TemporalMemory
 from ultralytics import YOLO
 
 import cv2
 import os
 import time
 
-# === Pre-run introspection ===
-run_pre_session_adjustments()
 
 # === Test file ===
-TEST_MEDIA = r"C:\Projects\SoftScreen\videos\dog_playing2.mp4"
+TEST_MEDIA = r"C:\Projects\SoftScreen\videos\dog_test_video2.mp4"
 
 # === Runtime options ===
 SAVE_OUTPUT = False

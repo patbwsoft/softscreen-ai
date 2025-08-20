@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 import yaml
 import os
+import json
 from datetime import datetime
 from mello_core.reflection import MelloReflection
 
@@ -27,6 +28,25 @@ class TemporalMemory:
         self.blur_areas = []
         self.label_log = []
 
+        # === Audio spike frame logic with extended window + cooldown ===
+        self.spike_frames = set()
+        self.last_audio_trigger_frame = -9999
+        self.cooldown_frames = 45  # ~1.5s cooldown between audio-triggered blur events
+
+        try:
+            with open("spikes.json", "r") as f:
+                timestamps = json.load(f)
+                fps = 30  # <- update this if your video has a different FPS
+                frame_spikes = [int(round(ts * fps)) for ts in timestamps]
+
+                linger_frames = int(1.5 * fps)  # blur for 1.5 seconds after each spike
+                for frame in frame_spikes:
+                    for offset in range(linger_frames):
+                        self.spike_frames.add(frame + offset)
+
+        except FileNotFoundError:
+            print("[INFO] No spikes.json found. Audio blur disabled.")
+
     def get_centroid(self, box):
         x1, y1, x2, y2 = box
         return ((x1 + x2) / 2, (y1 + y2) / 2)
@@ -39,6 +59,20 @@ class TemporalMemory:
         mask = np.zeros(frame.shape[:2], dtype=np.uint8)
         updated_ids = set()
         self.frame_counter += 1
+
+        # 🔊 Check if current frame is in the spike list and not within cooldown
+        audio_trigger = (
+            self.frame_counter in self.spike_frames
+            and (self.frame_counter - self.last_audio_trigger_frame > self.cooldown_frames)
+        )
+
+        if audio_trigger:
+            self.last_audio_trigger_frame = self.frame_counter
+
+        # 🔊 Show debug text while in cooldown window
+        if self.frame_counter - self.last_audio_trigger_frame <= self.cooldown_frames:
+            cv2.putText(frame, "🔊 AUDIO BLUR", (10, 40),
+                        cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 2)
 
         for det in detections:
             label = det['label']
@@ -94,6 +128,10 @@ class TemporalMemory:
             box = memory['bbox']
             x1, y1, x2, y2 = [int(v) for v in box]
             mask[y1:y2, x1:x2] = 255
+
+        # 🔊 Apply full-frame blur if this frame matched an audio spike
+        if audio_trigger:
+            mask[:, :] = 255
 
         return self.apply_blur(frame, mask)
 
