@@ -1,5 +1,5 @@
 # softscreen-ai
-Edge AI based blur filter for TVs using Jetson Nano
+Edge AI based blur filter for TVs using Jetson Orin Nano
 
 ---
 PATENT PENDING 
