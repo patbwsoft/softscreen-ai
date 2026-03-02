@@ -2,7 +2,7 @@
 Edge AI based blur filter for TVs using Jetson Nano
 
 ---
-
+PATENT PENDING 
 ## What is SoftScreen?
 
 SoftScreen runs a real-time object segmentation and blur engine on a small edge AI device. It watches incoming HDMI content, finds target objects like dogs, nudity, alcohol, or weapons, and applies a natural-looking blur — in real-time.
