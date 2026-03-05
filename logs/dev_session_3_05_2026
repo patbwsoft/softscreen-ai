@@ -1,0 +1,18 @@
+Date: March 5, 2026
+
+Session Summary:
+Began implementation of the rolling buffer architecture. This is a core component of the SoftScreen pipeline — the buffer holds a short window of frames to stabilize detections over time, eliminate flicker, maintain audio/video sync, and allow slightly forward-looking decisions before frames are released to output.
+
+This architecture is central to what makes SoftScreen work as a real-time passthrough device rather than a simple frame-by-frame filter.
+
+Progress:
+- Rolling buffer structure initiated
+- Early framework for frame windowing in place
+- Foundation laid for stable sync between detection and output stream
+
+Next:
+- Continue buffer development and stress testing
+- Integrate with live HDMI input pipeline
+- Validate sync stability under real content conditions
+
+Status: In progress — foundation complete, integration ahead
